@@ -516,16 +516,16 @@
           <div><div class="cd-label">Response time</div><div class="cd-val">Within 48 hours</div></div>
         </div>
       </div>
-      <div class="cr">
+      <form class="cr" action="https://formspree.io/f/mlgpqene" method="POST">
         <div class="fr2">
-          <div class="fg"><label class="fl">First name</label><input class="fi" type="text" placeholder="Your name" /></div>
-          <div class="fg"><label class="fl">Last name</label><input class="fi" type="text" placeholder="Your surname" /></div>
+          <div class="fg"><label class="fl" for="first-name">First name</label><input id="first-name" class="fi" type="text" name="first_name" placeholder="Your name" /></div>
+          <div class="fg"><label class="fl" for="last-name">Last name</label><input id="last-name" class="fi" type="text" name="last_name" placeholder="Your surname" /></div>
         </div>
-        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="your@email.com" /></div>
-        <div class="fg"><label class="fl">Dream destination</label><input class="fi" type="text" placeholder="Or just describe a feeling…" /></div>
-        <div class="fg"><label class="fl">Tell us more</label><textarea class="ft" placeholder="When are you thinking of travelling? Any special occasion?"></textarea></div>
-        <button class="fsub">Send enquiry</button>
-      </div>
+        <div class="fg"><label class="fl" for="email">Email</label><input id="email" class="fi" type="email" name="email" placeholder="your@email.com" required /></div>
+        <div class="fg"><label class="fl" for="destination">Dream destination</label><input id="destination" class="fi" type="text" name="dream_destination" placeholder="Or just describe a feeling..." /></div>
+        <div class="fg"><label class="fl" for="message">Tell us more</label><textarea id="message" class="ft" name="message" placeholder="When are you thinking of travelling? Any special occasion?"></textarea></div>
+        <button class="fsub" type="submit">Send enquiry</button>
+      </form>
     </div>
     <footer><div class="flogo">Ayara Travel</div><p>© 2026 · ayaratravel.com</p><p>hello@ayaratravel.com</p></footer>
   </div>
