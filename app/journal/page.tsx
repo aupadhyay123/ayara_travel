@@ -1,21 +1,25 @@
+import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 const posts = [
   {
-    img: 'https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=700&q=80',
+    slug: 'como',
+    img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700&q=80',
     cat: 'Destinations',
-    title: <>The <em>quiet villages</em> of the Amalfi Coast</>,
-    desc: "Beyond Positano — the hidden spots where time moves slowly and the limoncello is always cold.",
-    meta: '8 min · March 2026',
+    title: <>Lake Como: <em>private villas, boat rides, and the ferry</em> most tourists overlook</>,
+    desc: "From touring grand villas by private boat to hopping the affordable public ferry — the real guide to Como.",
+    meta: '9 min · March 2026',
   },
   {
+    slug: 'packing',
     img: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=700&q=80',
     cat: 'Packing',
     title: <>What to pack for a <em>luxury island escape</em></>,
     desc: "A considered packing list — linen-forward, minimal, and elegantly practical.",
-    meta: '5 min · Feb 2026',
+    meta: '6 min · Feb 2026',
   },
   {
+    slug: 'hotels',
     img: 'https://images.unsplash.com/photo-1455587734955-081b22074882?w=700&q=80',
     cat: 'Hotels',
     title: <>The world&apos;s most <em>beautiful boutique hotels</em></>,
@@ -23,6 +27,7 @@ const posts = [
     meta: '6 min · Jan 2026',
   },
   {
+    slug: 'hawaii',
     img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80',
     cat: 'Adventure',
     title: <>Swimming with <em>manta rays</em> in Hawaii</>,
@@ -30,6 +35,7 @@ const posts = [
     meta: '5 min · Nov 2025',
   },
   {
+    slug: 'japan',
     img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=700&q=80',
     cat: 'Food & Culture',
     title: <>Why <em>Japan</em> ruined every other food country for me</>,
@@ -37,6 +43,7 @@ const posts = [
     meta: '9 min · Oct 2025',
   },
   {
+    slug: 'lights',
     img: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=700&q=80',
     cat: 'Nature',
     title: <>Chasing the <em>northern lights</em> in Yellowknife</>,
@@ -69,8 +76,8 @@ export default function JournalPage() {
           </div>
         </div>
         <div className="blog-grid">
-          {posts.map((post, i) => (
-            <div className="bc" key={i}>
+          {posts.map((post) => (
+            <Link href={`/journal/${post.slug}`} className="bc" key={post.slug} style={{ textDecoration: 'none', display: 'block', cursor: 'pointer' }}>
               <div className="bc-img">
                 <div className="bc-img-bg" style={{ backgroundImage: `url('${post.img}')` }}></div>
               </div>
@@ -78,7 +85,8 @@ export default function JournalPage() {
               <div className="bc-title">{post.title}</div>
               <div className="bc-desc">{post.desc}</div>
               <div className="bc-meta">{post.meta}</div>
-            </div>
+              <div className="bc-read">Read more →</div>
+            </Link>
           ))}
         </div>
       </div>

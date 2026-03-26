@@ -82,6 +82,18 @@ export default function ContactPage() {
 						/>
 					</div>
 					<div className="fg">
+						<label className="fl" htmlFor="phone">
+							Phone
+						</label>
+						<input
+							id="phone"
+							className="fi"
+							type="text"
+							name="phone"
+							placeholder="Optional, if you would prefer to be contacted through text"
+						/>
+					</div>
+					<div className="fg">
 						<label className="fl" htmlFor="destination">
 							Dream destination
 						</label>
@@ -101,7 +113,7 @@ export default function ContactPage() {
 							id="message"
 							className="ft"
 							name="message"
-							placeholder="When are you thinking of travelling? Any special occasion?"
+							placeholder="When are you thinking of travelling? Any special occasion? What's your budget?"
 						></textarea>
 					</div>
 					<button className="fsub" type="submit">
